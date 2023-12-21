@@ -1,16 +1,15 @@
-import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
-import './index.css'
+import {Button, ConfigProvider} from "@nutui/nutui-react-taro";
 
 export default function Index() {
 
-  useLoad(() => {
-    console.log('Page loaded.')
-  })
-
   return (
-    <View className='index'>
-      <Text>Hello world!</Text>
-    </View>
+    <ConfigProvider theme={{
+      nutuiColorPrimary: '#1677ff',
+      nutuiColorPrimaryStop1: '#1677ff',
+      nutuiColorPrimaryStop2: '#1677ff',
+    }}
+    >
+      <Button type='danger'>Danger</Button>
+    </ConfigProvider>
   )
 }
